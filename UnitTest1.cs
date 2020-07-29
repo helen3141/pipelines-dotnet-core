@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace pipelines_dotnet_core
+namespace UnitTestProject1
 {
     [TestClass]
     public class UnitTest1
