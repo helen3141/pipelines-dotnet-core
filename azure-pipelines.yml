@@ -15,7 +15,14 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
+
 - script: dotnet test UnitTestProject1.csproj --logger trx
+
+
+- publish: '**/*.trx'
+  artifact: trx
+  displayName: Publish trx
+
 - task: PublishTestResults@2
   condition: succeededOrFailed()
   inputs:
