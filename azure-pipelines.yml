@@ -24,4 +24,5 @@ steps:
       !**\obj\**
     searchFolder: '$(System.DefaultWorkingDirectory)'
 
-- powershell: dir
+- powershell: |
+    Get-ChildItem -Path "$(Build.SourcesDirectory)" -Recurse -File | sort length –Descending
